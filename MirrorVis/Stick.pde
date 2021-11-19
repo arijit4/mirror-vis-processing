@@ -12,7 +12,6 @@ class Stick {
   }
   
   void show() {
-    strokeWeight(8);
     line(edges[0].pos.x, edges[0].pos.y, edges[1].pos.x, edges[1].pos.y);
     edges[0].show();
     edges[1].show();
@@ -24,7 +23,6 @@ class Stick {
   }
   
   void showAndUpdate() {
-    strokeWeight(8);
     line(edges[0].pos.x, edges[0].pos.y, edges[1].pos.x, edges[1].pos.y);
     edges[0].show();
     edges[1].show();
