@@ -5,7 +5,7 @@ class Mirror {
   boolean showAxis = true;
   boolean showFocus = true;
   boolean showCenter = true;
-  
+
   color[] ray_colors = {#FCF108, #E85E02};
 
   Mirror(PVector pos) {
@@ -69,7 +69,7 @@ class Mirror {
       float x = cos(theta) * (this.d/2);
       x += this.pos.x;
       y = this.pos.y - y;
-      // x is `NaN when the ray doesn't meet the mirror.
+      // x is `NaN` when the ray doesn't meet the mirror.
 
       ray.setReflectionPoint(new PVector(x, y));
       PVector reflectionDir = PVector.sub(this.mainFocus, ray.reflectionPoint).mult(100);
