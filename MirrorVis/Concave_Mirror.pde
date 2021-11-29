@@ -6,7 +6,7 @@ class Mirror {
   boolean showFocus = true;
   boolean showCenter = true;
 
-  color[] ray_colors = {#FCF108, #E85E02};
+  color[] ray_colors = {#FCF108, #E85E02, #980B75};
 
   Mirror(PVector pos) {
     this.pos = pos;

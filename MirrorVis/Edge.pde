@@ -32,4 +32,8 @@ class Edge {
       this.pos.y = mouseY;
     }
   }
+  
+  void update(float x, float y) {
+    this.pos.set(x, y);
+  }
 }
