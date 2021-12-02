@@ -15,6 +15,20 @@ class Stick {
     edges[2] = new Edge((a.x + b.x) / 2, (a.y + b.y) / 2, 10);
   }
 
+  Stick(Mirror m, String placement) {
+    if (placement.equals(m.CENTER)) {
+      edges[0] = new Edge(m.pos.x, m.pos.y - 20, 10);
+      edges[1] = new Edge(m.pos.x, m.pos.y + 20, 10);
+
+      edges[2] = new Edge((edges[0].pos.x + edges[1].pos.x) / 2, (edges[0].pos.y + edges[1].pos.y) / 2, 10);
+    } else if (placement.equals(m.FOCUS)) {
+      edges[0] = new Edge(m.mainFocus.x, m.mainFocus.y - 20, 10);
+      edges[1] = new Edge(m.mainFocus.x, m.mainFocus.y + 20, 10);
+
+      edges[2] = new Edge((edges[0].pos.x + edges[1].pos.x) / 2, (edges[0].pos.y + edges[1].pos.y) / 2, 10);
+    }
+  }
+
   void show() {
     line(edges[0].pos.x, edges[0].pos.y, edges[1].pos.x, edges[1].pos.y);
     edges[0].show();
@@ -23,6 +37,8 @@ class Stick {
   }
 
   void update() {
+    //edges[0].update(this.edges); // will be back when the functionality is back
+    //edges[1].update(this.edges);
     edges[0].update();
     edges[1].update();
 
