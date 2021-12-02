@@ -37,6 +37,7 @@ class Mirror {
   Mirror(float x, float y, float d) {
     this.pos = new PVector(x, y);
     this.mainFocus = new PVector(this.pos.x + d/4, pos.y);
+    setD(d);
   }
 
   void setD(float d) {
