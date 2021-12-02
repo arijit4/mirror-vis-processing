@@ -1,15 +1,18 @@
 class Edge {
   PVector pos;
   float bigD;
+  float bigR;
 
   Edge(PVector pos, float d) {
     this.pos = pos;
     this.bigD = d;
+    this.bigR = this.bigD / 2;
   }
 
   Edge(float x, float y, float d) {
     this.pos = new PVector(x, y);
     this.bigD = d;
+    this.bigR = this.bigD / 2;
   }
 
   void show() {
@@ -19,11 +22,11 @@ class Edge {
     if (isHovered(mouseX, mouseY)) {
       fill(255, 0, 0);
     }
-    ellipse(this.pos.x, this.pos.y, bigD / 2, bigD / 2);
+    ellipse(this.pos.x, this.pos.y, this.bigR, this.bigR);
   }
 
   boolean isHovered(float x, float y) {
-    return dist(x, y, pos.x, pos.y) < bigD;
+    return dist(x, y, pos.x, pos.y) < this.bigR;
   }
 
   void update() {
