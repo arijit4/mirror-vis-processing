@@ -5,6 +5,9 @@ class Mirror {
   boolean showAxis = true;
   boolean showFocus = true;
   boolean showCenter = true;
+  
+  String CENTER = "center";
+  String FOCUS = "focus";
 
   color[] ray_colors = {#FCF108, #E85E02, #980B75};
 
@@ -16,6 +19,12 @@ class Mirror {
     this.pos = pos;
     this.mainFocus = new PVector(pos.x + d/4, pos.y);
     this.d = d;
+  }
+
+  Mirror(float d) {
+    float x = max((width - d/2) / 2, 0);
+    this.pos = new PVector(x, height/2);
+    this.setD(d);
   }
 
   Mirror(float x, float y) {
