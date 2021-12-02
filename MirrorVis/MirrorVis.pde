@@ -3,8 +3,8 @@ Stick stick;
 
 void setup() {
   size(600, 600);
-  mirror = new Mirror(width/2, height/2, width/2);
-  stick = new Stick();
+  mirror = new Mirror(width);
+  stick = new Stick(mirror, mirror.FOCUS);
   stroke(255);
 
   frameRate(200);
